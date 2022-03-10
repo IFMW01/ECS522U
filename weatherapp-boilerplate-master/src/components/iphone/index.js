@@ -8,6 +8,12 @@ import $ from 'jquery';
 // import the Button component
 import Button from '../button';
 
+import Icon from '../icon'; //Imported
+
+import Auth from '../auth'; //Imported 
+
+import Link from '../link'; //Imported
+
 export default class Iphone extends Component {
 //var Iphone = React.createClass({
 
@@ -23,7 +29,7 @@ export default class Iphone extends Component {
 	// a call to fetch weather data via wunderground
 	fetchWeatherData = () => {
 		// API URL with a structure of : ttp://api.wunderground.com/api/key/feature/q/country-code/city.json
-		var url = "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=cf17e23b1d108b29a4d738d2084baf5";
+		var url = "http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&APPID=a973e9ecb5306d7f24b59a3677a25b3c";
 		$.ajax({
 			url: url,
 			dataType: "jsonp",
@@ -48,9 +54,18 @@ export default class Iphone extends Component {
 					<span class={ tempStyles }>{ this.state.temp }</span>
 				</div>
 				<div class={ style.details }></div>
+				<div> <Icon src = "../../assets/icons/logo.png">Welcome to WeWeather</Icon> </div>
+				<div><Auth></Auth></div>
+				<div style = 'display: inline-block'>
+					<Link style = 'display:inline'src = "../../assets/icons/fbIcon.webp" href ='https://en-gb.facebook.com/'></Link>
+					<Link style = 'display:inline' src = "../../assets/icons/googleIcon.jpeg" href ='https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1'></Link>
+					<Link style = 'display:inline'src = "../../assets/icons/instagram.jpeg" href ='https://www.instagram.com/'></Link>
+				</div>
 				<div class= { style_iphone.container }> 
 					{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
 				</div>
+				
+				
 			</div>
 		);
 	}
