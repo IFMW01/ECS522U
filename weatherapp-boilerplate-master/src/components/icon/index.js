@@ -8,11 +8,12 @@ export default class Button extends Component {
     //TODO: Move styling to LESS
 	render() {
 		let cimage = this.props.src;
-        let description = this.props.children;
+        let cdescription = this.props.children;
+		let cwidth = this.props.width;
 		return (
 			<div>
-				<img src={cimage} width='50'></img> 
-                <h1>{description}</h1>
+				<img src={cimage} width={cwidth}></img> 
+                <h1>{cdescription}</h1>
             </div>
 		);
 	}

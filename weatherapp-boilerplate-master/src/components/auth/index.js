@@ -1,5 +1,5 @@
 import { h, render, Component } from 'preact';
-import './auth_style_iphone.less'
+import authstyle from './auth_style_iphone.less'
 
 export default class Auth extends Component {
 
@@ -14,11 +14,16 @@ export default class Auth extends Component {
 			}
 		}
 		return (
-            <div style = 'padding-left: 20px; padding-right:20px;'>
+            <div>
                 <form>
-                    <input type ='text' placeholder='EXAMPLE@EMAIL.COM'></input>
-                    <input type ='password' placeholder='PASSWORD'></input>
-                    <input type = 'submit' value='Login'></input>
+					<div class = {authstyle.authInput}>
+						<input type ='text' placeholder='EXAMPLE@EMAIL.COM'></input>
+						<input type ='password' placeholder='PASSWORD'></input>
+					</div>
+                   <div class={authstyle.authSubmit}>
+				   		<input type = 'submit' value='Login'></input>
+					</div>
+                    
                 </form>
             </div>
 

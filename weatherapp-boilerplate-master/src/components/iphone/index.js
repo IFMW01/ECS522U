@@ -14,6 +14,8 @@ import Auth from '../auth'; //Imported
 
 import Link from '../link'; //Imported
 
+import City from '../city';
+
 export default class Iphone extends Component {
 //var Iphone = React.createClass({
 
@@ -47,26 +49,37 @@ export default class Iphone extends Component {
 		
 		// display all weather data
 		return (
+			// <div>
+			// 	<City name='London' date ='06.09.2023' temp='12'> </City>
+			// </div>
 			<div class={ style.container }>
-				<div class={ style.header }>
+				{/* <div class={ style.header }>
 					<div class={ style.city }>{ this.state.locate }</div>
 					<div class={ style.conditions }>{ this.state.cond }</div>
 					<span class={ tempStyles }>{ this.state.temp }</span>
 				</div>
-				<div class={ style.details }></div>
-				<div> <Icon src = "../../assets/icons/logo.png">Welcome to WeWeather</Icon> </div>
+				<div class={ style.details }></div> */}
+				<div> <Icon src = "../../assets/icons/WeWeatherIcon.jpeg" width = '100' >Welcome to WeWeather</Icon> </div>
 				<div><Auth></Auth></div>
-				<div style = 'display: inline-block'>
-					<Link style = 'display:inline'src = "../../assets/icons/fbIcon.webp" href ='https://en-gb.facebook.com/'></Link>
-					<Link style = 'display:inline' src = "../../assets/icons/googleIcon.jpeg" href ='https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1'></Link>
-					<Link style = 'display:inline'src = "../../assets/icons/instagram.jpeg" href ='https://www.instagram.com/'></Link>
+				<div class = {style.mediaBox}>
+
+					<div class = {style.socialMediaLinks}>
+						<Link style = 'width:100%'src = "../../assets/icons/fbIcon.webp" href ='https://en-gb.facebook.com/'></Link>
+					</div>
+					<div class = {style.socialMediaLinks}>
+						<Link style = 'width:100%'src = "../../assets/icons/googleIcon.jpeg" href ='https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1'></Link>
+					</div>
+					<div class = {style.socialMediaLinks}>
+						<Link style = 'width:100%'src = "../../assets/icons/instagram.jpeg" href ='https://www.instagram.com/'></Link>
+					</div>
+
+
 				</div>
-				<div class= { style_iphone.container }> 
-					{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
-				</div>
-				
-				
+								{/* <div class= { style_iphone.container }> 
+						{ this.state.display ? <Button class={ style_iphone.button } clickFunction={ this.fetchWeatherData }/ > : null }
+					</div> */}
 			</div>
+			
 		);
 	}
 
