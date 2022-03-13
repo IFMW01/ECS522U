@@ -59,18 +59,17 @@ export default class Iphone extends Component {
 					<span class={ tempStyles }>{ this.state.temp }</span>
 				</div>
 				<div class={ style.details }></div> */}
-				<div> <Icon src = "../../assets/icons/WeWeatherIcon.jpeg" width = '100' >Welcome to WeWeather</Icon> </div>
+				<div> <Icon src = "../../assets/icons/WeWeatherIcon.png" width = '150' >Welcome to WeWeather</Icon> </div>
 				<div><Auth></Auth></div>
 				<div class = {style.mediaBox}>
-
 					<div class = {style.socialMediaLinks}>
 						<Link style = 'width:100%'src = "../../assets/icons/fbIcon.webp" href ='https://en-gb.facebook.com/'></Link>
 					</div>
 					<div class = {style.socialMediaLinks}>
-						<Link style = 'width:100%'src = "../../assets/icons/googleIcon.jpeg" href ='https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1'></Link>
+						<Link style = 'width:100%'src = "../../assets/icons/google.png" href ='https://myaccount.google.com/?utm_source=sign_in_no_continue&pli=1'></Link>
 					</div>
 					<div class = {style.socialMediaLinks}>
-						<Link style = 'width:100%'src = "../../assets/icons/instagram.jpeg" href ='https://www.instagram.com/'></Link>
+						<Link style = 'width:100%'src = "../../assets/icons/instagram.png" href ='https://www.instagram.com/'></Link>
 					</div>
 
 

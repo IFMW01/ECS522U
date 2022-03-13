@@ -23,8 +23,10 @@ export default class Auth extends Component {
                    <div class={authstyle.authSubmit}>
 				   		<input type = 'submit' value='Login'></input>
 					</div>
-                    
                 </form>
+				<div class ={authstyle.createAcc}>
+						<a>Create account?</a>
+				</div>
             </div>
 
             
