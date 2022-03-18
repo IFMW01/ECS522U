@@ -24,28 +24,24 @@ export default class city extends Component {
 		let ctemp = this.props.temp;
 		let cdates = this.props.date;
 		return (
-			<div class = {style_cities.container}>
-				<div class ={style_cities.mediaBox}>
-					<div class={style_cities.cityName}>
-						<div style='width:100%'>
-							<h2>{cname}</h2>
-							<p>{cdates}</p>
-						</div>
-					</div>
-					<div class ={style_cities.weatherData}>
-						<div class = {style_cities.tempInfo}>
-							<div style='width:100%'>
+					<table class={style_cities.container}>
+						<tr>
+							<th style="width:60%"></th>
+							<th style="width:20%"></th>
+							<th style="width:20%"></th>
+						</tr>
+  						<tr>
 								
-									<img src={this.WeatherIcon(ctemp)} width ='60'></img>
+							<td class={style_cities.cityName} ><h1>{cname}</h1> <br> </br> <p>{cdates}</p></td>
+							<div style="float:right">
+								<td class = {style_cities.tempInfo} style="width:20%">{ctemp}</td>
+								<td  class = {style_cities.tempIcon} style="width:20%"><img src={this.WeatherIcon(ctemp)} width ='100'></img></td>
 							
 							</div>
 							
-						</div>
-					</div>
-				</div>
-				
-				
-            </div>
+ 						</tr>
+					</table>
+					
 		);
 	}
 
