@@ -12,8 +12,14 @@ export default class Activity extends Component {
         let desctription = this.props.p;
 		return (
 			<div class ={activityStyles.activity}>
-                <p>{desctription}</p>
-				<a href ={link}><img src={cimage} width='100'></img> </a>
+                     <div class={activityStyles.image}> 
+                        <img src={cimage} width='25'> </img>
+                    </div>
+                    <div class={activityStyles.link} >
+                        <a href ={link}><p>{desctription}</p> </a>
+                    </div>
+                
+                    
             </div>
 		);
 	}

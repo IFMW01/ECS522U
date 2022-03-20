@@ -44,10 +44,10 @@ export default class MainPage extends Component {
                         </div>
 
                         <div class ={mainStyle.activityBar}>
-                            <Activity  p = "Local Food" src = "../../assets/icons/food.png" href ='https://www.cntraveller.com/gallery/best-restaurants-londonb'></Activity>
-                            <Activity  p = "Sight Seeing" src = "../../assets/icons/food.png" href ='https://www.cntraveller.com/gallery/best-restaurants-londonb'></Activity>
-                            <Activity  p = "Culture" src = "../../assets/icons/culture.png" href ='https://www.cntraveller.com/gallery/best-restaurants-londonb'></Activity>
-                            <Activity  p = "Drnking" src = "../../assets/icons/food.png" href ='https://www.cntraveller.com/gallery/best-restaurants-londonb'></Activity>
+                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>
+                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity>
+                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity>
+                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity>
                         </div>
                     
                 </div>
