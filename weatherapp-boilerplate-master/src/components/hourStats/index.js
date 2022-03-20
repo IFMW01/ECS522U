@@ -31,7 +31,7 @@ export default class HourStats extends Component {
           
                
                     <div id='hourlyStats' class={ statsStyle.mediaBox}>
-                        <div id="temp1" class={statsStyle.hourlyTemp}>
+                        <div id="temp1" class={statsStyle.hourlyTemp1}>
                             <div id="temp1val" class={statsStyle.hourlyTempText}>
                                 {temp1}°
                             </div>
@@ -49,7 +49,7 @@ export default class HourStats extends Component {
                             </div>
                             {this.HourlyWeatherIMG(temp3)}
                         </div>
-                        <div id="temp4" class={statsStyle.hourlyTemp}>
+                        <div id="temp4" class={statsStyle.hourlyTemp2}>
                             <div id="temp4val"class={statsStyle.hourlyTempText}>
                                 {temp4}°
                             </div>
