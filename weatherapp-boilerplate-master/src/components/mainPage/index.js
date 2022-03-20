@@ -19,6 +19,8 @@ import Iphone from '../iphone';
 
 import style from '../iphone/style';
 
+import mainStyle from './style.less';
+
 export default class MainPage extends Component {
 
     	// the main render method for the login component
@@ -26,12 +28,14 @@ export default class MainPage extends Component {
 
 		return (
             <div class={ style.container }>
-                <div>
-                    <CurrentStats path='./currentStats' />
+                <div class = {mainStyle.locationBox}>
+            
+                        <CurrentStats path='./currentStats' />
+                        <HourStats path="./hourStats" />
+                
+
                 </div>
-                <div>
-                    <HourStats path="./hourStats" />
-                </div>
+                
             </div>
 		);
 	}

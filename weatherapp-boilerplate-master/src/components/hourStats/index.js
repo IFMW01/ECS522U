@@ -16,9 +16,9 @@ export default class HourStats extends Component {
     
     HourlyWeatherIMG = (currentTemp) => {
         if (currentTemp > 16) {
-            return <Icon src = "../../assets/icons/sunny2.png" width = '50'></Icon>
+            return <Icon src = "../../assets/icons/sunny2.png" width = '45'></Icon>
         } else {
-            return <Icon src = "../../assets/icons/cloudy2.png" width = '50'></Icon>
+            return <Icon src = "../../assets/icons/cloudy2.png" width = '45'></Icon>
         }
     }
 
@@ -29,35 +29,34 @@ export default class HourStats extends Component {
         const temp4 = this.fetchHourlyTemps()[3];
         return (
           
-                <div class={ style.mediaBox}> 
-                    <div id='hourlyStats'>
+               
+                    <div id='hourlyStats' class={ statsStyle.mediaBox}>
                         <div id="temp1" class={statsStyle.hourlyTemp}>
-                            <div id="temp1val">
+                            <div id="temp1val" class={statsStyle.hourlyTempText}>
                                 {temp1}°
                             </div>
                             {this.HourlyWeatherIMG(temp1)}
                         </div>
                         <div id="temp2" class={statsStyle.hourlyTemp}>
-                            <div id="temp2val">
+                            <div id="temp2val" class={statsStyle.hourlyTempText}>
                                 {temp2}°
                             </div>
                             {this.HourlyWeatherIMG(temp2)}
                         </div>
                         <div id="temp3" class={statsStyle.hourlyTemp}>
-                            <div id="temp3val">
+                            <div id="temp3val"class={statsStyle.hourlyTempText}>
                                 {temp3}°
                             </div>
                             {this.HourlyWeatherIMG(temp3)}
                         </div>
                         <div id="temp4" class={statsStyle.hourlyTemp}>
-                            <div id="temp4val">
+                            <div id="temp4val"class={statsStyle.hourlyTempText}>
                                 {temp4}°
                             </div>
                             {this.HourlyWeatherIMG(temp4)}
                         </div>
                  
                     </div>    
-                </div>
 
         );
     }

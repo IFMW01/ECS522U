@@ -62,9 +62,9 @@ export default class CurrentStats extends Component {
     
     CurrentWeatherIMG = (currentTemp) => {
         if (currentTemp > 16) {
-            return <Icon src = "../../assets/icons/sunny2.png" width = '200'></Icon>
+            return <Icon src = "../../assets/icons/sunny2.png" width = '150'></Icon>
         } else {
-            return <Icon src = "../../assets/icons/cloudy2.png" width = '200'></Icon>
+            return <Icon src = "../../assets/icons/cloudy2.png" width = '150'></Icon>
         }
     }
 
@@ -83,17 +83,26 @@ export default class CurrentStats extends Component {
                     <div id='location' class={statsStyle.location}>
                         {Location}
                     </div>
-                    <div id='currentTemperature' class={statsStyle.currentTemperature}>
-                        {currentTemperature}°
-                    <div id='weatherDescription' class={statsStyle.weatherDescription}>
-                        {weatherDescription}
-                    </div>
-                    <div id='CurrentWeatherIMG' class={statsStyle.CurrentWeatherIMG}>
-                        {this.CurrentWeatherIMG(currentTemperature)}
-                    </div>
-                    </div>
-                    <div id='highLow' class={statsStyle.highLow}>
-                        High: {highTemperature}° - Low: {lowTemperature}°
+                    <div class ={statsStyle.mediaBox}>
+                        <div class ={statsStyle.tempBox}>
+                            <div id='currentTemperature' class={statsStyle.currentTemperature}>
+                                {currentTemperature}°
+                            </div>
+
+                            <div id='weatherDescription' class={statsStyle.weatherDescription}>
+                                {weatherDescription}
+                            </div>
+
+                        </div>
+
+                        <div class ={statsStyle.imgBox}>                             
+                            <div id='CurrentWeatherIMG'>
+                                {this.CurrentWeatherIMG(currentTemperature)}
+                            </div>
+                            <div id='highLow' class={statsStyle.highLow}>
+                                High: {highTemperature}° - Low: {lowTemperature}°
+                            </div>
+                        </div>
                     </div>
                 </div>
           
