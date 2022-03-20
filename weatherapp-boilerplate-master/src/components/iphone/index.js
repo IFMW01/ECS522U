@@ -12,6 +12,7 @@ import Loading from '../loading';
 
 
 import Login from '../login'
+import MainPage from '../mainPage';
 
 export default class Iphone extends Component {
 //var Iphone = React.createClass({
@@ -54,6 +55,7 @@ export default class Iphone extends Component {
 			<Router>
 				<Login path = '/' />
 				<Loading path = '/loading' />
+				<MainPage path = '/mainPage' />
 			</Router>
 		);
 	};

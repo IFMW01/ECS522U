@@ -1,5 +1,6 @@
 // import preact
 import { h, render, Component } from 'preact';
+
 import Button from '../button';
 
 import Icon from '../icon'; //Imported
@@ -18,10 +19,17 @@ import loadingStyle from './style.less';
 
 export default class Loading extends Component {
 
+	componentDidMount() {
+        redirectTimeout = setTimeout(() => {
+            window.location.href = '/mainPage'
+        }, []);
+      }
+
     	// the main render method for the login component
 	render() {
 		return (
 			<div class={ style.container }>
+
 				<div> <Icon src = "../../assets/icons/WeWeatherIcon.png" width = '150' ></Icon> </div>
                 <div class = {loadingStyle.text}>
 						<p>Loading your next great escape...</p>
