@@ -25,7 +25,7 @@ export default class MainPage extends Component {
 	render() {
 
 		return (
-            <div>
+            <div class={ style.container }>
                 <div>
                     <CurrentStats path='./currentStats' />
                 </div>

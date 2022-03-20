@@ -4,6 +4,8 @@ import Icon from '../icon';
 
 import statsStyle from './style.less'
 
+import style from '../iphone/style';
+
 export default class HourStats extends Component {
 
     
@@ -26,33 +28,37 @@ export default class HourStats extends Component {
         const temp3 = this.fetchHourlyTemps()[2];
         const temp4 = this.fetchHourlyTemps()[3];
         return (
-            <div id='hourlyStats' class={statsStyle.hourlyStats}>
-                <div id="temp1" class={statsStyle.temp1}>
-                    <div id="temp1val" class={statsStyle.temp1val}>
-                        {temp1}°
-                    </div>
-                    {this.HourlyWeatherIMG(temp1)}
+          
+                <div class={ style.mediaBox}> 
+                    <div id='hourlyStats'>
+                        <div id="temp1" class={statsStyle.hourlyTemp}>
+                            <div id="temp1val">
+                                {temp1}°
+                            </div>
+                            {this.HourlyWeatherIMG(temp1)}
+                        </div>
+                        <div id="temp2" class={statsStyle.hourlyTemp}>
+                            <div id="temp2val">
+                                {temp2}°
+                            </div>
+                            {this.HourlyWeatherIMG(temp2)}
+                        </div>
+                        <div id="temp3" class={statsStyle.hourlyTemp}>
+                            <div id="temp3val">
+                                {temp3}°
+                            </div>
+                            {this.HourlyWeatherIMG(temp3)}
+                        </div>
+                        <div id="temp4" class={statsStyle.hourlyTemp}>
+                            <div id="temp4val">
+                                {temp4}°
+                            </div>
+                            {this.HourlyWeatherIMG(temp4)}
+                        </div>
+                 
+                    </div>    
                 </div>
-                <div id="temp2" class={statsStyle.temp2}>
-                    <div id="temp2val" class={statsStyle.temp2val}>
-                        {temp2}°
-                    </div>
-                    {this.HourlyWeatherIMG(temp2)}
-                </div>
-                <div id="temp3" class={statsStyle.temp3}>
-                    <div id="temp3val" class={statsStyle.temp3val}>
-                        {temp3}°
-                    </div>
-                    {this.HourlyWeatherIMG(temp3)}
-                </div>
-                <div id="temp4" class={statsStyle.temp4}>
-                    <div id="temp4val" class={statsStyle.temp4val}>
-                        {temp4}°
-                    </div>
-                    {this.HourlyWeatherIMG(temp4)}
-                </div>
-            </div>
-            
+
         );
     }
 }

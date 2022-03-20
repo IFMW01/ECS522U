@@ -22,7 +22,8 @@ export default class Loading extends Component {
 	componentDidMount() {
         redirectTimeout = setTimeout(() => {
             window.location.href = '/mainPage'
-        }, []);
+        }, 1000);
+
       }
 
     	// the main render method for the login component

@@ -4,6 +4,8 @@ import Icon from '../icon';
 
 import statsStyle from './style.less'
 
+import style from '../iphone/style';
+
 export default class CurrentStats extends Component {
 
     state = {
@@ -77,24 +79,24 @@ export default class CurrentStats extends Component {
         const highTemperature = this.fetchHighTemperature();
         const lowTemperature = this.fetchLowTemperature();
         return (
-            <div id="currentWeatherComponent" class={statsStyle.currentWeatherComponent}>
-                <div id='location' class={statsStyle.location}>
-                    {Location}
+                <div id="currentWeatherComponent">
+                    <div id='location' class={statsStyle.location}>
+                        {Location}
+                    </div>
+                    <div id='currentTemperature' class={statsStyle.currentTemperature}>
+                        {currentTemperature}°
+                    <div id='weatherDescription' class={statsStyle.weatherDescription}>
+                        {weatherDescription}
+                    </div>
+                    <div id='CurrentWeatherIMG' class={statsStyle.CurrentWeatherIMG}>
+                        {this.CurrentWeatherIMG(currentTemperature)}
+                    </div>
+                    </div>
+                    <div id='highLow' class={statsStyle.highLow}>
+                        High: {highTemperature}° - Low: {lowTemperature}°
+                    </div>
                 </div>
-                <div id='currentTemperature' class={statsStyle.currentTemperature}>
-                    {currentTemperature}°
-                <div id='weatherDescription' class={statsStyle.weatherDescription}>
-                    {weatherDescription}
-                </div>
-                <div id='CurrentWeatherIMG' class={statsStyle.CurrentWeatherIMG}>
-                    {this.CurrentWeatherIMG(currentTemperature)}
-                </div>
-                </div>
-                <div id='highLow' class={statsStyle.highLow}>
-                    High: {highTemperature}° - Low: {lowTemperature}°
-                </div>
-            </div>
-            
+          
         );
     }
 }
