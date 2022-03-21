@@ -13,7 +13,8 @@ export default class CurrentStats extends Component {
         temp : "",
         temp_low : "",
         temp_high : "",
-        cond : ""
+        cond : "",
+        cond2 : ""
     }
 
     componentDidMount() {
@@ -26,7 +27,8 @@ export default class CurrentStats extends Component {
                     temp : data['main']['temp'],
                     temp_low : data['main']['temp_min'],
                     temp_high : data['main']['temp_max'],
-                    cond : data['weather']['0']['description']
+                    cond : data['weather']['0']['description'],
+                    cond2 : data['weather']['0']['main']
                 });
         })
 
@@ -35,7 +37,8 @@ export default class CurrentStats extends Component {
 			temp : temperature,
 			temp_low : temperatureLow,
             temp_high : temperatureHigh,
-            cond : conditions
+            cond : conditions,
+            cond2 : conditions2
 
 		}); 
     }
@@ -59,10 +62,20 @@ export default class CurrentStats extends Component {
     fetchLowTemperature = () => {
         return Math.round(this.state.temp_low);
     }
+
+    fetchWeatherDescriptionSimple = () => {
+        return this.state.cond2;
+    }
     
-    CurrentWeatherIMG = (currentTemp) => {
-        if (currentTemp > 16) {
+    CurrentWeatherIMG = (cond2) => {
+        if (cond2 == "Cloudy" || cond2 == "Clear") {
+            return <Icon src = "../../assets/icons/cloudy2.png" width = '150'></Icon>
+        } else if (cond2 == "Sunny") {
             return <Icon src = "../../assets/icons/sunny2.png" width = '150'></Icon>
+        } else if (cond2 == "Raining") {
+            return <Icon src = "../../assets/icons/rainy2.png" width = '150'></Icon>
+        } else if (cond2 == "Windy") {
+            return <Icon src = "../../assets/icons/windy2.png" width = '150'></Icon>
         } else {
             return <Icon src = "../../assets/icons/cloudy2.png" width = '150'></Icon>
         }
@@ -78,6 +91,7 @@ export default class CurrentStats extends Component {
         const weatherDescription = this.fetchWeatherDescription();
         const highTemperature = this.fetchHighTemperature();
         const lowTemperature = this.fetchLowTemperature();
+        const weatherDescriptionSimple = this.fetchWeatherDescriptionSimple();
         return (
                 <div id="currentWeatherComponent">
                     <div id='location' class={statsStyle.location}>
@@ -97,7 +111,7 @@ export default class CurrentStats extends Component {
 
                         <div class ={statsStyle.imgBox}>                             
                             <div id='CurrentWeatherIMG'>
-                                {this.CurrentWeatherIMG(currentTemperature)}
+                                {this.CurrentWeatherIMG(weatherDescriptionSimple)}
                             </div>
                             <div id='highLow' class={statsStyle.highLow}>
                                 High: {highTemperature}° - Low: {lowTemperature}°
