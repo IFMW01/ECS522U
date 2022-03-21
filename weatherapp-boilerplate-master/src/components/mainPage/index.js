@@ -56,7 +56,7 @@ export default class MainPage extends Component {
                 <div class ={mainStyle.upComingTrips}>
                     <h5>Upcoming trips</h5>
                 </div>
-                    <Location src ="15th June - 25th June">London</Location>
+                    <Location src ="15th June - 25th June">Manchester</Location>
                     <Location src ="30th June - 3rd July">Lisbon</Location>                
             </div>
 		);
