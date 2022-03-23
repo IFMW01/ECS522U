@@ -1,8 +1,8 @@
-Before running the application, ensure you have installed node_modules (run 'npm install')
+Before running the application, ensure you have installed node_modules (run 'npm install') in the terminal window
 
 Next, change directory (cd .\weatherapp-boilerplate-master\)
 
-Next, run the application by running 'npm run dev'
+Next, run the application by running 'npm run dev' or 'npm start'
 
 The login details for the app are as follows:
 Username: israel
