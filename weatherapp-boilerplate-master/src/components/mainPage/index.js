@@ -32,6 +32,8 @@ import mainStyle from './style.less'; //Imported component stylesheet
 
 
 
+import Navbar from '../navbar';
+
 
 export default class MainPage extends Component {
 
@@ -67,10 +69,10 @@ export default class MainPage extends Component {
         });
     }
 
+
     	// the main render method for the rendering of the main page 
 
 	render() {
-
 		return (
             <div class={ style.containerMainPage}>
                 <div class ={mainStyle.profile}> 
@@ -92,7 +94,7 @@ export default class MainPage extends Component {
                     
                 </div>
               
-
+                
                 <div class ={mainStyle.upComingTrips}>
                         <div class={mainStyle.form}>
                             <h5>Upcoming trips</h5>
