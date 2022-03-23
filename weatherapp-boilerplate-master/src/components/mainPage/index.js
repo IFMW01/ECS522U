@@ -30,11 +30,6 @@ import style from '../iphone/style'; //Imported component stylesheet
 import mainStyle from './style.less'; //Imported component stylesheet
 
 
-
-
-import Navbar from '../navbar';
-
-
 export default class MainPage extends Component {
 
     state = {
