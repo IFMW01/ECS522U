@@ -5,29 +5,32 @@ import $, { event } from "jquery";
 
 import React, { useEffect, useState } from "react";
 
-import CurrentStats from '../currentStats';
+import CurrentStats from '../currentStats'; //Imported component
 
-import HourStats from '../hourStats';
+import HourStats from '../hourStats'; //Imported component
 
-import Button from '../button';
+import Button from '../button'; //Imported component
 
-import Icon from '../icon'; //Imported
+import Icon from '../icon'; //Imported component
 
-import Auth from '../auth'; //Imported 
+import Auth from '../auth'; //Imported component
 
-import Link from '../link'; //Imported
+import Link from '../link'; //Imported component
 
-import City from '../city'
+import Iphone from '../iphone'; //Imported component
 
-import Iphone from '../iphone';
+import Location from '../location'; //Imported component
 
-import style from '../iphone/style';
+import Activity from '../activity'; //Imported component
 
-import mainStyle from './style.less';
+import Navbar from '../navbar'; //Imported component
 
-import Location from '../location';
+import style from '../iphone/style'; //Imported component stylesheet
 
-import Activity from '../activity';
+import mainStyle from './style.less'; //Imported component stylesheet
+
+
+
 
 import Navbar from '../navbar';
 
@@ -66,7 +69,9 @@ export default class MainPage extends Component {
         });
     }
 
-    	// the main render method for the login component
+
+    	// the main render method for the rendering of the main page 
+
 	render() {
 		return (
             <div class={ style.containerMainPage}>
@@ -76,15 +81,15 @@ export default class MainPage extends Component {
                 <div class ={mainStyle.topSection}>
                         <div class = {mainStyle.locationBox}>
                     
-                            <CurrentStats path='./currentStats' />
-                            <HourStats path="./hourStats" />
+                            <CurrentStats path='./currentStats' />  {/* Using the current stats component*/}
+                            <HourStats path="./hourStats" /> {/* Using the Hour stats component*/}
                         </div>
 
                         <div class ={mainStyle.activityBar}>
-                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>
-                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity>
-                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity>
-                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity>
+                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>  {/* Using the Actvitity component*/}
+                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity> {/* Using the Actvitity component*/}
+                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity> {/* Using the Actvitity component*/}
+                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity> {/* Using the Actvitity component*/}
                         </div>
                     
                 </div>
@@ -94,13 +99,10 @@ export default class MainPage extends Component {
                         <div class={mainStyle.form}>
                             <h5>Upcoming trips</h5>
                         </div>
-                        <div class={mainStyle.form}>
-                            <input id="location" type="text" name="location" value={this.state.location} onKeyPress={this.fetchWeatherData} onChange={this.handleChange}></input>
-                        </div>
                 </div>
-                    <Location src ="15th June - 25th June">Manchester</Location>
-                    <Location src ="30th June - 3rd July">Lisbon</Location>  
-                <Navbar></Navbar>              
+                    <Location src ="15th June - 25th June">Manchester</Location> {/* Using the Location component that utilises an API call*/}
+                    <Location src ="30th June - 3rd July">Lisbon</Location>   {/* Using the Location component that utilises an API call*/}
+                <Navbar></Navbar>   {/* Using the NavBar*/}         
             </div>
 		);
 	}

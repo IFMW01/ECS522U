@@ -15,16 +15,16 @@ export default class Navbar extends Component {
 			<div>
 				<div class = {navStyle.bar}>
 					<div class = {navStyle.icon}>
-						<Link src = "../../assets/icons/home.png" href =''></Link>
+						<Link src = "../../assets/icons/home.png" href =''></Link> {/* Uses the link component with an absent href, ensuring user stays on the page */}
 					</div>
 					<div class = {navStyle.icon}>
-						<Link src = "../../assets/icons/clipboard.png" href =''></Link>
+						<Link src = "../../assets/icons/clipboard.png" href =''></Link> {/* Uses the link component with an empty href, ensuring user stays on the page */}
 					</div>
 					<div class = {navStyle.icon}>
-						<Link src = "../../assets/icons/map.png" href =''></Link>
+						<Link src = "../../assets/icons/map.png" href =''></Link> {/* Uses the link component with an empty href, ensuring user stays on the page */}
 					</div>
 					<div class = {navStyle.icon}>
-						<Link src = "../../assets/icons/setting.png" href =''></Link>
+						<Link src = "../../assets/icons/setting.png" href =''></Link> {/* Uses the link component with an empty href, ensuring user stays on the page */}
 					</div>
 				</div>
 			</div>
