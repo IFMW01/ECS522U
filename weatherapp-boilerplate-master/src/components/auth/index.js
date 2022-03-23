@@ -6,29 +6,28 @@ export default class Auth extends Component {
 
 	// rendering a function when the button is clicked
 	reroute(event){
-		var userName = document.forms["login"]["uName"].value;
-		var password = document.forms["login"]["PWD"].value;
+		var userName = document.forms["login"]["uName"].value;  /* Setting userName varaibles from html input by user */
+		var password = document.forms["login"]["PWD"].value; /* Setting the password varaibles from html input by user */
 		const passwordElement = document.getElementById("PWD");
 		const uNameElement = document.getElementById("uName");
 		console.log(password)
-		if(userName =='' || password ==''){
-			document.getElementById("invalid").style.display = 'block'
+		if(userName =='' || password ==''){ /* If password and user name values are left empty */
+			document.getElementById("invalid").style.display = 'block' /* Display invalid credentials notif */
 			uNameElement.style.backgroundColor = 'rgb(247, 160, 160)';
 			passwordElement.style.backgroundColor = 'rgb(247, 160, 160)';
 			
 		}
-		else if(userName=='israel' && password == '123456'){
-			document.getElementById("invalid").style.display = 'none';
-			document.getElementById("valid").style.display = 'block'
+		else if(userName=='israel' && password == '123456'){ /* If valid credentails are inputted*/
+			document.getElementById("invalid").style.display = 'none'; 
+			document.getElementById("valid").style.display = 'block'  /* Display valid box */
 
 			passwordElement.style.backgroundColor = 'rgb(160, 247, 167)';
 			uNameElement.style.backgroundColor = 'rgb(247, 160, 160)';
-			setTimeout(() => { window.location.href='/loading'; }, 500);
-			
+			setTimeout(() => { window.location.href='/loading'; }, 500);  /* Route to the loading page */			
 			
 		}
-		else{
-			document.getElementById("invalid").style.display = 'block';
+		else{  /* Invalid credentails inpuuted */
+			document.getElementById("invalid").style.display = 'block';  /* Display invlaid notification */
 			document.getElementById("PWD").style.backgroundColor = rgb(247,160,160);
 			document.getElementById('uName').style.backgroundColor = rgb(247, 160, 160);
 		}

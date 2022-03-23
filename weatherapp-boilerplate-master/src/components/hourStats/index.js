@@ -1,10 +1,10 @@
 import { h, render, Component } from 'preact';
 
-import Icon from '../icon';
+import Icon from '../icon'; // Imports Icon component
 
-import statsStyle from './style.less'
+import statsStyle from './style.less' // Imports stats styling
 
-import style from '../iphone/style';
+import style from '../iphone/style'; // Imports iphone styling
 
 export default class HourStats extends Component {
 
@@ -14,26 +14,26 @@ export default class HourStats extends Component {
         condM : ""
     }
 
-    componentDidMount() {
+    componentDidMount() { /* Using the API call to get the name, temperature and wather Icon from the call */
         fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=a973e9ecb5306d7f24b59a3677a25b3c&units=metric')
         .then(response => response.json())
         .then(
             (data) => {
                 this.setState({
-                    temp : data['main']['temp'],
-                    cond : data['weather']['0']['description'],
+                    temp : data['main']['temp'], /* Exrtracting temperature from the API return*/
+                    cond : data['weather']['0']['description'], /* Exrtracting description from the API return*/
                     condM : data['weather']['0']['main']
                 });
         })
 
         this.setState({
-			temp : temperature,
-            cond : conditions,
+			temp : temperature, /* Setting temp varaible with API value*/
+            cond : conditions, /* Setting cond varaible with weather conditions API value*/
             condM : conditionsMain
 		}); 
     }
 
-    fetchHourlyTemps = () => {
+    fetchHourlyTemps = () => { /* Setting horuly temp values, they are hard coded as the API free version does not allow hourly weather data extraction*/
         var today = new Date();
         var time = today.getHours();
         if (time > 18 || time < 2) {
@@ -46,16 +46,16 @@ export default class HourStats extends Component {
     }
     
     HourlyWeatherIMG = (condM) => {
-        if (condM == "Cloudy" || condM == "Clear") {
-            return <Icon src = "../../assets/icons/cloudy2.png" width = '45'></Icon>
+        if (condM == "Cloudy" || condM == "Clear") { /* Setting Icon to show for weather values*/
+            return <Icon src = "../../assets/icons/cloudy2.png" width = '45'></Icon> /* Using Icoon component with cloudy weather image input*/
         } else if (condM == "Sunny") {
-            return <Icon src = "../../assets/icons/sunny2.png" width = '45'></Icon>
+            return <Icon src = "../../assets/icons/sunny2.png" width = '45'></Icon> /* Using Icoon component with sunny weather image input*/
         } else if (condM == "Raining") {
-            return <Icon src = "../../assets/icons/rainy2.png" width = '45'></Icon>
+            return <Icon src = "../../assets/icons/rainy2.png" width = '45'></Icon> /* Using Icoon component with rainy weather image input*/
         } else if (condM == "Windy") {
-            return <Icon src = "../../assets/icons/windy2.png" width = '45'></Icon>
+            return <Icon src = "../../assets/icons/windy2.png" width = '45'></Icon> /* Using Icoon component with windy weather image input*/
         } else {
-            return <Icon src = "../../assets/icons/cloudy2.png" width = '45'></Icon>
+            return <Icon src = "../../assets/icons/cloudy2.png" width = '45'></Icon> /* Using Icoon component with default cloudy weather image input*/
         }
     }
 

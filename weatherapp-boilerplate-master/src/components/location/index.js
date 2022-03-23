@@ -28,9 +28,9 @@ export default class Location extends Component {
         icon : ""
     }
 
-    componentDidMount() {
+    componentDidMount() { /* Using the API call to get the name, temperature and wather Icon from the call */
 		let location = this.props.children
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=a973e9ecb5306d7f24b59a3677a25b3c&units=metric`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=a973e9ecb5306d7f24b59a3677a25b3c&units=metric`) 
         .then(response => response.json())
         .then(
             (data) => {
@@ -60,8 +60,8 @@ export default class Location extends Component {
 	render() {
         const temp = this.fetchCurrentWeather();
         const icon = this.fetchIcon();
-		let location = this.props.children
-		let date = this.props.src
+		let location = this.props.children /* Takes location from compoenent parameter */
+		let date = this.props.src /* Takes dates from compoenent parameter */
 		return (
 				<div class={locationStyle.location}>
 					<div class={locationStyle.left}>
@@ -74,10 +74,10 @@ export default class Location extends Component {
 					</div>
 					<div class={locationStyle.right}>
 						<div class={locationStyle.temp}>
-							<p>{temp}°C</p>
+							<p>{temp}°C</p> {/* Using the temp variable to insert the temperature */}
 						</div>
 						<div class={locationStyle.icon}>
-							<img src={"http://openweathermap.org/img/wn/" + icon + ".png"}></img>
+							<img src={"http://openweathermap.org/img/wn/" + icon + ".png"}></img> {/* Getting the Icon from an online server provided by the API */}
 						</div>
 					</div>
 				</div>

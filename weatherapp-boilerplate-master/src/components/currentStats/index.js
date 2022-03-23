@@ -17,23 +17,23 @@ export default class CurrentStats extends Component {
         cond2 : ""
     }
 
-    componentDidMount() {
+    componentDidMount() { /* API call to get weather info for London*/
         fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=a973e9ecb5306d7f24b59a3677a25b3c&units=metric')
         .then(response => response.json())
         .then(
             (data) => {
                 this.setState({
-                    locate : data['name'],
-                    temp : data['main']['temp'],
-                    temp_low : data['main']['temp_min'],
-                    temp_high : data['main']['temp_max'],
-                    cond : data['weather']['0']['description'],
-                    cond2 : data['weather']['0']['main']
+                    locate : data['name'], /* Getting location name from API */
+                    temp : data['main']['temp'], /* Getting temperature from the API */
+                    temp_low : data['main']['temp_min'], /* Getting the minimum temperature from the API */
+                    temp_high : data['main']['temp_max'], /* Getting the maximum temperature from the API */
+                    cond : data['weather']['0']['description'], /* Getting the weather description from the API */
+                    cond2 : data['weather']['0']['main'] 
                 });
         })
 
-        this.setState({
-			locate : location,
+        this.setState({ /* Setting the vraibles with the data from the API */
+			locate : location, 
 			temp : temperature,
 			temp_low : temperatureLow,
             temp_high : temperatureHigh,
@@ -43,11 +43,11 @@ export default class CurrentStats extends Component {
 		}); 
     }
 
-    fetchCurrentWeather = () => {
+    fetchCurrentWeather = () => { /* Rounding the temperature value */
         return Math.round(this.state.temp);
     }
 
-    fetchWeatherDescription = () => {
+    fetchWeatherDescription = () => { /* Setting the description to the right format and putting it into an array */
         const arr = this.state.cond.split(" ");
         for (var i = 0; i < arr.length; i++) {
             arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
@@ -55,11 +55,11 @@ export default class CurrentStats extends Component {
         return arr.join(" ");
     }
 
-    fetchHighTemperature = () => {
+    fetchHighTemperature = () => { /* Rounding the Max temperature value */
         return Math.round(this.state.temp_high);
     }
 
-    fetchLowTemperature = () => {
+    fetchLowTemperature = () => { /* Rounding the Min temperature value */
         return Math.round(this.state.temp_low);
     }
 
@@ -67,7 +67,7 @@ export default class CurrentStats extends Component {
         return this.state.cond2;
     }
     
-    CurrentWeatherIMG = (cond2) => {
+    CurrentWeatherIMG = (cond2) => { /* If-else staircase to dertermine the Icons that are used for each weather state, using Icon components */
         if (cond2 == "Cloudy" || cond2 == "Clear") {
             return <Icon src = "../../assets/icons/cloudy2.png" width = '150'></Icon>
         } else if (cond2 == "Sunny") {

@@ -1,34 +1,83 @@
 // import preact
 import { h, render, Component } from 'preact';
 
+<<<<<<< Updated upstream
 import CurrentStats from '../currentStats';
+=======
+import $, { event } from "jquery";
 
-import HourStats from '../hourStats';
+import React, { useEffect, useState } from "react";
 
-import Button from '../button';
+import CurrentStats from '../currentStats'; //Imported component
+>>>>>>> Stashed changes
 
-import Icon from '../icon'; //Imported
+import HourStats from '../hourStats'; //Imported component
 
-import Auth from '../auth'; //Imported 
+import Button from '../button'; //Imported component
 
-import Link from '../link'; //Imported
+import Icon from '../icon'; //Imported component
 
-import City from '../city'
+import Auth from '../auth'; //Imported component
 
-import Iphone from '../iphone';
+import Link from '../link'; //Imported component
 
-import style from '../iphone/style';
+import Iphone from '../iphone'; //Imported component
 
-import mainStyle from './style.less';
+import Location from '../location'; //Imported component
 
-import Location from '../location';
+import Activity from '../activity'; //Imported component
 
-import Activity from '../activity';
+import Navbar from '../navbar'; //Imported component
 
+import style from '../iphone/style'; //Imported component stylesheet
+
+import mainStyle from './style.less'; //Imported component stylesheet
+
+
+<<<<<<< Updated upstream
 
 export default class MainPage extends Component {
 
     	// the main render method for the login component
+=======
+
+
+export default class MainPage extends Component {
+
+    state = {
+        location : ""
+    }
+
+    success = () => {
+        document.getElementById("location").style.backgroundColor = rgb(160,247,167);
+    }
+
+    fail = () => {
+        document.getElementById("location").style.backgroundColor = rgb(247,160,160);
+    }
+
+    // a call to fetch weather data via wunderground
+	fetchWeatherData = (event) => {
+		if (event.key === 'Enter') {
+            // API URL with a structure of : ttp://api.wunderground.com/api/key/feature/q/country-code/city.json
+            var url = `http://api.openweathermap.org/data/2.5/weather?q=${this.state.location}&units=metric&APPID=a973e9ecb5306d7f24b59a3677a25b3c`;
+            $.ajax({
+                url: url,
+                dataType: "jsonp",
+                success : this.success,
+                error : this.fail
+            })
+        }
+	}
+
+    handleChange = (event) => {
+        this.setState({
+            location : event.target.value
+        });
+    }
+
+    	// the main render method for the rendering of the main page 
+>>>>>>> Stashed changes
 	render() {
 
 		return (
@@ -39,21 +88,22 @@ export default class MainPage extends Component {
                 <div class ={mainStyle.topSection}>
                         <div class = {mainStyle.locationBox}>
                     
-                            <CurrentStats path='./currentStats' />
-                            <HourStats path="./hourStats" />
+                            <CurrentStats path='./currentStats' />  {/* Using the current stats component*/}
+                            <HourStats path="./hourStats" /> {/* Using the Hour stats component*/}
                         </div>
 
                         <div class ={mainStyle.activityBar}>
-                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>
-                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity>
-                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity>
-                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity>
+                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>  {/* Using the Actvitity component*/}
+                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity> {/* Using the Actvitity component*/}
+                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity> {/* Using the Actvitity component*/}
+                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity> {/* Using the Actvitity component*/}
                         </div>
                     
                 </div>
               
 
                 <div class ={mainStyle.upComingTrips}>
+<<<<<<< Updated upstream
                     <h5>Upcoming trips</h5>
                 </div>
                     <Location src ="15th June - 25th June">Manchester</Location>
@@ -64,6 +114,15 @@ export default class MainPage extends Component {
                        <br></br>
              
                 </div>             
+=======
+                        <div class={mainStyle.form}>
+                            <h5>Upcoming trips</h5>
+                        </div>
+                </div>
+                    <Location src ="15th June - 25th June">Manchester</Location> {/* Using the Location component that utilises an API call*/}
+                    <Location src ="30th June - 3rd July">Lisbon</Location>   {/* Using the Location component that utilises an API call*/}
+                <Navbar></Navbar>   {/* Using the NavBar*/}         
+>>>>>>> Stashed changes
             </div>
 		);
 	}
