@@ -12,24 +12,16 @@ export default class Auth extends Component {
 		const uNameElement = document.getElementById("uName");
 		console.log(password)
 		if(userName =='' || password ==''){ /* If password and user name values are left empty */
-			document.getElementById("invalid").style.display = 'block' /* Display invalid credentials notif */
-			uNameElement.style.backgroundColor = 'rgb(247, 160, 160)';
-			passwordElement.style.backgroundColor = 'rgb(247, 160, 160)';
-			
+			document.getElementById("invalid").style.display = 'block' /* Display invalid credentials notif */			
 		}
 		else if(userName=='israel' && password == '123456'){ /* If valid credentails are inputted*/
 			document.getElementById("invalid").style.display = 'none'; 
 			document.getElementById("valid").style.display = 'block'  /* Display valid box */
-
-			passwordElement.style.backgroundColor = 'rgb(160, 247, 167)';
-			uNameElement.style.backgroundColor = 'rgb(247, 160, 160)';
 			setTimeout(() => { window.location.href='/loading'; }, 500);  /* Route to the loading page */			
 			
 		}
 		else{  /* Invalid credentails inpuuted */
 			document.getElementById("invalid").style.display = 'block';  /* Display invlaid notification */
-			document.getElementById("PWD").style.backgroundColor = rgb(247,160,160);
-			document.getElementById('uName').style.backgroundColor = rgb(247, 160, 160);
 		}
 		event.preventDefault();
 	}
