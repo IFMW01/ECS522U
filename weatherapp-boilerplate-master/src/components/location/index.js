@@ -12,8 +12,6 @@ import Auth from '../auth'; //Imported
 
 import Link from '../link'; //Imported
 
-import City from '../city'
-
 import Iphone from '../iphone';
 
 import style from '../iphone/style';

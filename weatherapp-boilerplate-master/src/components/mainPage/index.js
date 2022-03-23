@@ -1,15 +1,11 @@
 // import preact
 import { h, render, Component } from 'preact';
 
-<<<<<<< Updated upstream
-import CurrentStats from '../currentStats';
-=======
 import $, { event } from "jquery";
 
 import React, { useEffect, useState } from "react";
 
 import CurrentStats from '../currentStats'; //Imported component
->>>>>>> Stashed changes
 
 import HourStats from '../hourStats'; //Imported component
 
@@ -34,12 +30,7 @@ import style from '../iphone/style'; //Imported component stylesheet
 import mainStyle from './style.less'; //Imported component stylesheet
 
 
-<<<<<<< Updated upstream
 
-export default class MainPage extends Component {
-
-    	// the main render method for the login component
-=======
 
 
 export default class MainPage extends Component {
@@ -77,7 +68,7 @@ export default class MainPage extends Component {
     }
 
     	// the main render method for the rendering of the main page 
->>>>>>> Stashed changes
+
 	render() {
 
 		return (
@@ -103,18 +94,6 @@ export default class MainPage extends Component {
               
 
                 <div class ={mainStyle.upComingTrips}>
-<<<<<<< Updated upstream
-                    <h5>Upcoming trips</h5>
-                </div>
-                    <Location src ="15th June - 25th June">Manchester</Location>
-                    <Location src ="30th June - 3rd July">Lisbon</Location>   
-
-                <div class ={mainStyle.bottomNav}> 
-                       <br></br>
-                       <br></br>
-             
-                </div>             
-=======
                         <div class={mainStyle.form}>
                             <h5>Upcoming trips</h5>
                         </div>
@@ -122,7 +101,6 @@ export default class MainPage extends Component {
                     <Location src ="15th June - 25th June">Manchester</Location> {/* Using the Location component that utilises an API call*/}
                     <Location src ="30th June - 3rd July">Lisbon</Location>   {/* Using the Location component that utilises an API call*/}
                 <Navbar></Navbar>   {/* Using the NavBar*/}         
->>>>>>> Stashed changes
             </div>
 		);
 	}

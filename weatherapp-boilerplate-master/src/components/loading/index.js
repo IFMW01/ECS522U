@@ -1,8 +1,6 @@
 // import preact
 import { h, render, Component } from 'preact';
 
-import Button from '../button';
-
 import Icon from '../icon'; //Imported component
 
 import Auth from '../auth'; //Imported component

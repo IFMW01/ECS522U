@@ -2,11 +2,9 @@
 import { h, render, Component } from 'preact';
 // import stylesheets for ipad & button
 import style from './style';
-import style_ipad from '../button/style_ipad';
-// import jquery for API calls
 import $ from 'jquery';
 // import the Button component
-import Button from '../button';
+
 
 export default class Ipad extends Component {
 //var Ipad = React.createClass({

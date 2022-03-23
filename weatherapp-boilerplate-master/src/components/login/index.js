@@ -1,14 +1,11 @@
 // import preact
 import { h, render, Component } from 'preact';
-import Button from '../button';
 
 import Icon from '../icon'; //Imported Component
 
 import Auth from '../auth'; //Imported Component
 
 import Link from '../link'; //Imported Component
-
-import City from '../city' //Imported Component
 
 import Iphone from '../iphone'; //Imported Component
 
