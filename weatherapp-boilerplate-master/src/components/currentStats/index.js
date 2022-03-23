@@ -17,22 +17,22 @@ export default class CurrentStats extends Component {
         cond2 : ""
     }
 
-    componentDidMount() { /* API call to get weather info for London*/
+    componentDidMount() { /* API call to get current weather info for London*/
         fetch('https://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=a973e9ecb5306d7f24b59a3677a25b3c&units=metric')
         .then(response => response.json())
         .then(
             (data) => {
                 this.setState({
-                    locate : data['name'], /* Getting location name from API */
-                    temp : data['main']['temp'], /* Getting temperature from the API */
-                    temp_low : data['main']['temp_min'], /* Getting the minimum temperature from the API */
-                    temp_high : data['main']['temp_max'], /* Getting the maximum temperature from the API */
-                    cond : data['weather']['0']['description'], /* Getting the weather description from the API */
-                    cond2 : data['weather']['0']['main'] 
+                    locate : data['name'], /* Fetching location name from API */
+                    temp : data['main']['temp'], /* Fetching temperature from the API */
+                    temp_low : data['main']['temp_min'], /* Fetching the minimum temperature from the API */
+                    temp_high : data['main']['temp_max'], /* Fetching the maximum temperature from the API */
+                    cond : data['weather']['0']['description'], /* Fething the weather description from the API */
+                    cond2 : data['weather']['0']['main'] /* Fething the weather description (main) from the API */
                 });
         })
 
-        this.setState({ /* Setting the vraibles with the data from the API */
+        this.setState({ /* Setting the variables with the data from the API */
 			locate : location, 
 			temp : temperature,
 			temp_low : temperatureLow,
@@ -47,7 +47,7 @@ export default class CurrentStats extends Component {
         return Math.round(this.state.temp);
     }
 
-    fetchWeatherDescription = () => { /* Setting the description to the right format and putting it into an array */
+    fetchWeatherDescription = () => { /* Setting the description to the correct format and putting it into an array */
         const arr = this.state.cond.split(" ");
         for (var i = 0; i < arr.length; i++) {
             arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);

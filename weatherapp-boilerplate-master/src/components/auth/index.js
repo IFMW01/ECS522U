@@ -1,5 +1,5 @@
 import { h, render, Component } from 'preact';
-import React, { useState } from "preact";
+import React from "preact";
 import authstyle from './auth_style_iphone.less'
 
 export default class Auth extends Component {
@@ -8,8 +8,7 @@ export default class Auth extends Component {
 	reroute(event){
 		var userName = document.forms["login"]["uName"].value;  /* Setting userName varaibles from html input by user */
 		var password = document.forms["login"]["PWD"].value; /* Setting the password varaibles from html input by user */
-		const passwordElement = document.getElementById("PWD");
-		const uNameElement = document.getElementById("uName");
+
 		console.log(password)
 		if(userName =='' || password ==''){ /* If password and user name values are left empty */
 			document.getElementById("invalid").style.display = 'block' /* Display invalid credentials notif */			
@@ -27,7 +26,7 @@ export default class Auth extends Component {
 	}
 	render() {
 		let cFunction = this.props.clickFunction;
-        let form_style = this.props.form_class
+        
 		// {form.submit('/loading')}
 		if(typeof cFunction !== 'function'){
 			cFunction = () => {

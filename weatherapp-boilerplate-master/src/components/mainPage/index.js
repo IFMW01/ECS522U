@@ -1,23 +1,13 @@
 // import preact
 import { h, render, Component } from 'preact';
 
-import $, { event } from "jquery";
+import $ from "jquery";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import CurrentStats from '../currentStats'; //Imported component
 
 import HourStats from '../hourStats'; //Imported component
-
-import Button from '../button'; //Imported component
-
-import Icon from '../icon'; //Imported component
-
-import Auth from '../auth'; //Imported component
-
-import Link from '../link'; //Imported component
-
-import Iphone from '../iphone'; //Imported component
 
 import Location from '../location'; //Imported component
 
@@ -81,10 +71,10 @@ export default class MainPage extends Component {
                         </div>
 
                         <div class ={mainStyle.activityBar}>
-                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>  {/* Using the Actvitity component*/}
-                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity> {/* Using the Actvitity component*/}
-                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity> {/* Using the Actvitity component*/}
-                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity> {/* Using the Actvitity component*/}
+                            <Activity  p = "Local Food" src = "https://img.icons8.com/emoji/48/000000/fork-and-knife-with-plate-emoji.png" href ='https://www.cntraveller.com/gallery/best-restaurants-london'></Activity>  {/* Using the Activity component*/}
+                            <Activity  p = "Sight Seeing" src = "https://img.icons8.com/emoji/48/000000/eyes-emoji.png" href ='https://www.tripadvisor.co.uk/Attraction_Products-g186338-a_contentId.39583743001+677519730-London_England.html'></Activity> {/* Using the Activity component */}
+                            <Activity  p = "Culture" src = "https://img.icons8.com/emoji/48/000000/artist-palette.png" href ='https://www.visitlondon.com/things-to-do/sightseeing/london-attraction/gallery/best-art-galleries-in-london'></Activity> {/* Using the Activity component */}
+                            <Activity  p = "Drinking" src = "https://img.icons8.com/emoji/48/000000/clinking-beer_mugs.png" href ='https://www.designmynight.com/london/whats-on/top-10-places-to-drink-in-london'></Activity> {/* Using the Activity component */}
                         </div>
                     
                 </div>

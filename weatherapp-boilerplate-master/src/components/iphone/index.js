@@ -1,9 +1,5 @@
-// import preact
 import Router from 'preact-router'; //ADDED DEPENDANCY EXPLAIN IN VIDEO!!1
 import { h, render, Component } from 'preact';
-// import stylesheets for ipad & button
-import style from './style';
-import style_iphone from '../button/style_iphone';
 
 import Loading from '../loading';
 
