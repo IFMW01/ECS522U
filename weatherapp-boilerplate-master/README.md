@@ -5,7 +5,7 @@ Password: 123456
 No dependancies added.
 
 To use app:
-Login with deatails above. 
+Login with details above. 
 You should be taken to a loading screen. 
 Then view the main page of the GUI. 
 
