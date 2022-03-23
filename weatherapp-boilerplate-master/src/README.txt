@@ -1,3 +1,9 @@
+Before running the application, ensure you have installed node_modules (run 'npm install')
+
+Next, change directory (cd .\weatherapp-boilerplate-master\)
+
+Next, run the application by running 'npm run dev'
+
 The login details for the app are as follows:
 Username: israel
 Password: 123456
